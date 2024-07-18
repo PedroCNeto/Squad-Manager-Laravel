@@ -1,4 +1,4 @@
-<?php include_once(base_path('resources\Includes\Header.php')); ?>
+@include('blade_includes.header') 
 
   </head>
   <body>
@@ -12,4 +12,5 @@
     <h1>Hello, world!</h1>
   </body>
 
-<?php include_once(base_path('resources\Includes\Footer.php')); ?>
+@include('blade_includes.footer') 
+
