@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SquadController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SquadController::class, 'index']);
