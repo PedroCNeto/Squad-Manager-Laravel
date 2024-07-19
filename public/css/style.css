@@ -1,0 +1,17 @@
+* {
+    font-family: "Inconsolata", monospace;
+}
+
+.title-nav {
+    font-size: 3vw;
+}
+
+body {
+    background-color: rgb(216, 216, 216);
+}
+
+@media (max-width: 576px) { 
+    .title-nav{
+        font-size: 6vw;
+    }
+}
