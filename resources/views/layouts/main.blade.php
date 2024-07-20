@@ -31,14 +31,18 @@
             <a class="nav-link" style="color: white" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: white" href="createsquad">Create Squad</a>
+            <a class="nav-link" style="color: white" href="createsquad">Squads</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: white" href="createmission">Create Mission</a>
+            <a class="nav-link" style="color: white" href="createmission">Missions</a>
           </li>
         </ul>
       </div>
     </nav>
+
+    @if(session('msg'))
+      <p class="msg text-center bg-success" >{{ session('msg') }}</p>
+    @endif
 
     @yield('content')
   </body>

@@ -17,8 +17,9 @@ class MissionController extends Controller
 
     public function createmissionpage(){
         $squads = Squad::all();
+        $missions = Mission::all();
 
-        return view('createmission', ['squads' => $squads]);
+        return view('createmission', ['squads' => $squads, 'missions' => $missions]);
     }
 
     public function store(Request $request){
@@ -29,7 +30,7 @@ class MissionController extends Controller
 
         $mission = Mission::create(['name' => $name , 'local' => $local, 'squad_id' => $squadId, 'status' => 1]);
 
-        return redirect('/');
+        return redirect('createmission')->with('msg', "Mission created successfully!");
 
     }
 }

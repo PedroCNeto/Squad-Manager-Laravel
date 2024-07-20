@@ -16,9 +16,9 @@ class SquadController extends Controller
     }
 
     public function createsquadpage(){
-        
-        
-        return view('createsquad');
+        $squads = Squad::all();
+
+        return view('createsquad', ['squads' => $squads]);
     }
 
     public function store(Request $request){
@@ -28,7 +28,7 @@ class SquadController extends Controller
     
         $squad = Squad::create(['name' => $name , 'rank' => $rank, 'status' => 0]);
 
-        return redirect('/');
+        return redirect('createsquad')->with('msg', "Squad created successfully!");
 
     }
 }
