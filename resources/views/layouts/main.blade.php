@@ -34,7 +34,7 @@
             <a class="nav-link" style="color: white" href="createsquad">Create Squad</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: white" href="#">Create Mission</a>
+            <a class="nav-link" style="color: white" href="createmission">Create Mission</a>
           </li>
         </ul>
       </div>

@@ -17,6 +17,7 @@ class SquadController extends Controller
 
     public function createsquadpage(){
         
+        
         return view('createsquad');
     }
 
