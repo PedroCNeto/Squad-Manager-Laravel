@@ -28,16 +28,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto me-auto">
           <li class="nav-item active">
-            <a class="nav-link" style="color: white" href="#">Home</a>
+            <a class="nav-link" style="color: white" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: white" href="#">Features</a>
+            <a class="nav-link" style="color: white" href="createsquad">Create Squad</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: white" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" style="color: white" href="#">Disabled</a>
+            <a class="nav-link" style="color: white" href="#">Create Mission</a>
           </li>
         </ul>
       </div>
