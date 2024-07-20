@@ -55,8 +55,8 @@
             <div class="card">
                 <img class="card-img-top img-fluid" src="/images/squad.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">{{ $mission->name }} - {{ $mission->local }}</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title text-center">{{ $mission->name }} - {{ $mission->local }}</h5>
+                    <p class="card-text text-center">Squad - {{ $mission->squad->name }}.</p>
                 </div>
                 @if($mission->status === 0)
                     <p class="card-text bg-success ms-auto me-auto mb-2"><small class="p-2">Finished</small></p>

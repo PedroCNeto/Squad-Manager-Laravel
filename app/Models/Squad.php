@@ -10,4 +10,9 @@ class Squad extends Model
     use HasFactory;
     protected $fillable = ['name', 'rank', 'status'];
 
+    public function mission()
+    {
+        return $this->hasMany(Mission::class);
+    }
+
 }

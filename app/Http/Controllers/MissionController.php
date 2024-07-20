@@ -17,7 +17,7 @@ class MissionController extends Controller
 
     public function createmissionpage(){
         $squads = Squad::all();
-        $missions = Mission::all();
+        $missions = Mission::with('squad')->get();
 
         return view('createmission', ['squads' => $squads, 'missions' => $missions]);
     }

@@ -9,4 +9,9 @@ class Mission extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'local', 'status', 'squad_id'];
+
+    public function squad()
+    {
+        return $this->belongsTo(Squad::class);
+    }
 }

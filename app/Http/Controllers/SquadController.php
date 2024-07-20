@@ -17,7 +17,7 @@ class SquadController extends Controller
 
     public function createsquadpage(){
         $squads = Squad::all();
-
+        
         return view('createsquad', ['squads' => $squads]);
     }
 
