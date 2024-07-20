@@ -25,7 +25,7 @@ class SquadController extends Controller
         $name= $request->input('namesquad');
         $rank = $request->input('ranksquad');
     
-        $squad = Squad::create(['name' => $name , 'rank' => $rank, 'active' => 0]);
+        $squad = Squad::create(['name' => $name , 'rank' => $rank, 'status' => 0]);
 
         return redirect('/');
 

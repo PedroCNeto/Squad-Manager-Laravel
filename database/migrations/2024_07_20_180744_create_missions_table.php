@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('squads', function (Blueprint $table) {
+        Schema::create('missions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("name");
-            $table->string("rank");
-            $table->boolean("status");
+            $table->string("local");
+            $table->boolean('status');
+            $table->foreignId('squad_id')->constrained(
+                table: 'squads', indexName: 'mission_squad_id'
+            );        
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('squads');
+        Schema::dropIfExists('missions');
     }
 };

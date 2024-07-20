@@ -13,7 +13,7 @@
                     <h5 class="card-title">{{ $squad->name }} - {{ $squad->rank }}</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 </div>
-                @if($squad->active === 0)
+                @if($squad->status === 0)
                     <p class="card-text bg-success ms-auto me-auto mb-2"><small class="p-2">Free Time</small></p>
                 @else
                     <p class="card-text bg-danger ms-auto me-auto mb-2"><small class="p-2">In Mission</small></p>
