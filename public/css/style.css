@@ -14,8 +14,18 @@ label {
     text-align: right;
 }
 
+.form-container {
+    background-color: rgb(228, 228, 228);
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.75);
+}
+
 @media (max-width: 576px) { 
     .title-nav{
         font-size: 6vw;
     }
 }
+
+
