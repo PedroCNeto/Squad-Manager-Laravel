@@ -8,7 +8,7 @@
         <h2 class="text-center mb-4">Creating Squads</h2>
         <div class="row d-flex justify-content-center">
             <div class="col-md-6 mb-4">
-            <form action="/createsquad" method="POST">
+            <form action="/createsquad" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row mb-4">
                     <div class="col-auto d-flex align-items-center">
@@ -33,6 +33,14 @@
                     </select>                  
                     </div>
                 </div>
+                <div class="row mb-4">
+                    <div class="col-auto d-flex align-items-center">
+                        <label for="image" class="mb-0">Squad Image: </label>
+                    </div>
+                    <div class="col">
+                        <input type="file" id="image" name="image" class="form-control-file">
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-auto me-auto ms-auto d-flex">
                         <button type="submit" class="form-control bg-success">Confirm</button>
@@ -46,7 +54,7 @@
             @foreach ($squads as $squad)
             <div class="col-md-3 mb-4">
                 <div class="card">
-                    <img class="card-img-top img-fluid" src="/images/squad.jpg" alt="Card image cap">
+                    <img class="card-img-top img-fluid" src="images/squadsImg/{{ $squad->img }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ $squad->name }} - {{ $squad->rank }}</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>

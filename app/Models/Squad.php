@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Squad extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'rank', 'status'];
+    protected $fillable = ['name', 'rank', 'status', 'img'];
 
     public function mission()
     {

@@ -25,8 +25,25 @@ class SquadController extends Controller
 
         $name= $request->input('namesquad');
         $rank = $request->input('ranksquad');
+
+        $img = "";
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $request->image->move(public_path('images/squadsImg'), $imageName);
+
+            $img = $imageName;
+        }
+        else{
+            $img = "squad.jpg";
+        }
     
-        $squad = Squad::create(['name' => $name , 'rank' => $rank, 'status' => 0]);
+        $squad = Squad::create(['name' => $name , 'rank' => $rank, 'status' => 0, 'img' => $img]);
 
         return redirect('createsquad')->with('msg', "Squad created successfully!");
 

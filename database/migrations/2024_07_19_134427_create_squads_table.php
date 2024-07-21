@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string("name");
             $table->string("rank");
             $table->boolean("status");
+            $table->string("img");
         });
     }
 

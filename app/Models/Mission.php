@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mission extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'local', 'status', 'squad_id'];
+    protected $fillable = ['name', 'local', 'status', 'squad_id', 'img'];
 
     public function squad()
     {

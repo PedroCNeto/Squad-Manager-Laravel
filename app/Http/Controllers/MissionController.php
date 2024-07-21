@@ -28,7 +28,25 @@ class MissionController extends Controller
         $local = $request->input('placemission');
         $squadId = $request->input('squad_id');
 
-        $mission = Mission::create(['name' => $name , 'local' => $local, 'squad_id' => $squadId, 'status' => 1]);
+        $img = "";
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $request->image->move(public_path('images/missionsImg'), $imageName);
+
+            $img = $imageName;
+        }
+        else{
+            $img = "squad.jpg";
+        }
+
+
+        $mission = Mission::create(['name' => $name , 'local' => $local, 'squad_id' => $squadId, 'status' => 1, 'img' => $img]);
 
         return redirect('createmission')->with('msg', "Mission created successfully!");
 

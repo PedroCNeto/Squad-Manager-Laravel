@@ -19,7 +19,8 @@ return new class extends Migration
             $table->boolean('status');
             $table->foreignId('squad_id')->constrained(
                 table: 'squads', indexName: 'mission_squad_id'
-            );        
+            );
+            $table->string("img");        
         });
     }
 
