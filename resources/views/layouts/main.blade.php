@@ -31,10 +31,10 @@
             <a class="nav-link" style="color: white" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: white" href="createsquad">Squads</a>
+            <a class="nav-link" style="color: white" href="/createsquad">Squads</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: white" href="createmission">Missions</a>
+            <a class="nav-link" style="color: white" href="/createmission">Missions</a>
           </li>
         </ul>
       </div>
