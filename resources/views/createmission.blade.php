@@ -66,6 +66,7 @@
                     <h5 class="card-title text-center">{{ $mission->name }} - {{ $mission->local }}</h5>
                     <p class="card-text text-center">Squad - {{ $mission->squad->name }}.</p>
                 </div>
+                <a href="show/missionshow/{{$mission->id}}">Batata</a>
                 @if($mission->status === 0)
                     <p class="card-text bg-success ms-auto me-auto mb-2"><small class="p-2">Finished</small></p>
                 @else

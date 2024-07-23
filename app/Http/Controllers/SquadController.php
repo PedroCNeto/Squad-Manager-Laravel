@@ -48,4 +48,11 @@ class SquadController extends Controller
         return redirect('createsquad')->with('msg', "Squad created successfully!");
 
     }
+
+    public function show($id){
+
+        $squad = Squad::findOrFail($id);
+
+        return view('show.squadshow', ['squad' => $squad]);
+    }
 }

@@ -51,4 +51,10 @@ class MissionController extends Controller
         return redirect('createmission')->with('msg', "Mission created successfully!");
 
     }
+
+    public function show($id){
+
+        $mission = Mission::findOrFail($id);
+        return view('show.missionshow', ['mission' => $mission]);
+    }
 }

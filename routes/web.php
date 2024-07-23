@@ -5,8 +5,13 @@ use App\Http\Controllers\SquadController;
 use App\Http\Controllers\MissionController;
 
 Route::get('/', [MissionController::class, 'index']);
+
 Route::get('/createsquad', [SquadController::class, 'createsquadpage']);
 Route::post('/createsquad', [SquadController::class, 'store']);
+
+Route::get('/show/squadshow/{id}', [SquadController::class, 'show']);
+Route::get('/show/missionshow/{id}', [MissionController::class, 'show']);
+
 Route::get('/createmission', [MissionController::class, 'createmissionpage']);
 Route::post('/createmission', [MissionController::class, 'store']);
 
