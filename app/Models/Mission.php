@@ -8,10 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Mission extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'local', 'status', 'squad_id', 'img'];
+    protected $fillable = ['name', 'local', 'status', 'squad_id', 'img', 'supports'];
 
     public function squad()
     {
         return $this->belongsTo(Squad::class);
     }
+
+    protected $casts = [
+        'supports' => 'array'
+    ];
+
 }

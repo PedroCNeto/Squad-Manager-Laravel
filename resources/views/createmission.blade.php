@@ -48,6 +48,22 @@
                         <input type="file" id="image" name="image" class="form-control-file">
                     </div>
                 </div>
+                <div class="row mb-4">
+                    <hr>
+                    <h3 class="text-center mb-4">Mission Supports</h3>
+                    <div class="col-4">
+                        <label for="artillery">Artillery: </label>
+                        <input type="checkbox" id="artillery" name="items[]" value="Artillery">
+                    </div>
+                    <div class="col-4">
+                        <label for="helicopter">Helicopter: </label>
+                        <input type="checkbox" id="helicopter" name="items[]" value="Helicopter">
+                    </div>
+                    <div class="col-4">
+                        <label for="nightVision">NightVision: </label>
+                        <input type="checkbox" id="nightVision" name="items[]" value="NightVision">
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-auto me-auto ms-auto d-flex">
                         <button type="submit" class="form-control bg-success">Confirm</button>

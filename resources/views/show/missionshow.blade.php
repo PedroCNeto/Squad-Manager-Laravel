@@ -10,6 +10,10 @@
                 <h2 class="mb-4">{{ $mission->name }}</h2>
                 <h4 class="mb-2">Localization: {{ $mission->local }}</h4>
                 <h4 class="mb-2">Squad: {{ $mission->squad->name }}</h4>
+                <h4 class="mb-2">Mission Supports: </h4>
+                @foreach($mission->supports as $support)
+                    <h5> - {{$support}}</h5>
+                @endforeach
                 @if($mission->status === 0)
                     <h4 class="text-center bg-success mb-2">Status: Finished</h4>
                 @else

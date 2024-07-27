@@ -27,6 +27,7 @@ class MissionController extends Controller
         $name= $request->input('namemission');
         $local = $request->input('placemission');
         $squadId = $request->input('squad_id');
+        $supports = $request->input('items');
 
         $img = ""; 
         if($request->hasFile('image') && $request->file('image')->isValid()){
@@ -46,7 +47,7 @@ class MissionController extends Controller
         }
 
 
-        $mission = Mission::create(['name' => $name , 'local' => $local, 'squad_id' => $squadId, 'status' => 1, 'img' => $img]);
+        $mission = Mission::create(['name' => $name , 'local' => $local, 'squad_id' => $squadId, 'status' => 1, 'img' => $img, 'supports' => $supports]);
 
         return redirect('createmission')->with('msg', "Mission created successfully!");
 
