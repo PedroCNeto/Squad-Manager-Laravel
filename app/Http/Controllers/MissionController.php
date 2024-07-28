@@ -28,7 +28,6 @@ class MissionController extends Controller
         $local = $request->input('placemission');
         $squadId = $request->input('squad_id');
         $supports = $request->input('items');
-
         $img = ""; 
         if($request->hasFile('image') && $request->file('image')->isValid()){
 
