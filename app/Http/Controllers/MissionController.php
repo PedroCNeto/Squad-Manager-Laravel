@@ -10,16 +10,38 @@ use App\Models\Mission;
 class MissionController extends Controller
 {
     public function index() {
-        $missions = Mission::all();
+        
+        $search = request('search');
 
-        return view('index', ['missions' => $missions]);
+        if($search){
+            $missions = Mission::where([
+                ['name', 'like', '%'.$search.'%']
+            ])->get();
+        }
+        else{
+            $missions = Mission::all();
+        }
+
+
+        return view('index', ['missions' => $missions, 'search' => $search]);
     }
 
     public function createmissionpage(){
         $squads = Squad::all();
-        $missions = Mission::with('squad')->get();
 
-        return view('createmission', ['squads' => $squads, 'missions' => $missions]);
+        $search = request('search');
+
+        if($search){
+            $missions = Mission::where([
+                ['name', 'like', '%'.$search.'%']
+            ])->get();
+        }
+        else{
+            $missions = Mission::all();
+        }
+
+
+        return view('createmission', ['squads' => $squads, 'missions' => $missions, 'search' => $search]);
     }
 
     public function store(Request $request){

@@ -74,23 +74,44 @@
         </div>
     </div>
     <div class="row mt-5">
-        @foreach ($missions as $mission)
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <img class="card-img-top img-fluid" src="/images/missionsImg/{{ $mission->img }}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title text-center">{{ $mission->name }} - {{ $mission->local }}</h5>
-                    <p class="card-text text-center">Squad - {{ $mission->squad->name }}.</p>
-                    <a class="nav-link" href="show/missionshow/{{$mission->id}}"><p class="text-center bg-secondary">More info</p></a>
-                </div>
-                @if($mission->status === 0)
-                    <p class="card-text bg-success ms-auto me-auto mb-2"><small class="p-2">Finished</small></p>
-                @else
-                    <p class="card-text bg-danger ms-auto me-auto mb-2"><small class="p-2">Running</small></p>
-                @endif
+        <form action="/createmission" class="d-flex flex-direction-row" method="get">
+            <div class="col-10">
+                <input type="text" class="form-control" name="search" placeholder="Search the mission..." id="searchInput">
             </div>
+            <div class="col-2">
+                <button class="form-control bg-secondary">Search</button>
+            </div>
+        </form>
+    </div>
+    @if($search)
+    <div class="row mt-3">
+        <h3>Searching for {{ $search }}:</h3>
+    </div>
+    @endif
+    <div class="row mt-5">
+        @if(count($missions) > 0)
+            @foreach ($missions as $mission)
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="/images/missionsImg/{{ $mission->img }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{ $mission->name }} - {{ $mission->local }}</h5>
+                        <p class="card-text text-center">Squad - {{ $mission->squad->name }}.</p>
+                        <a class="nav-link" href="show/missionshow/{{$mission->id}}"><p class="text-center bg-secondary">More info</p></a>
+                    </div>
+                    @if($mission->status === 0)
+                        <p class="card-text bg-success ms-auto me-auto mb-2"><small class="p-2">Finished</small></p>
+                    @else
+                        <p class="card-text bg-danger ms-auto me-auto mb-2"><small class="p-2">Running</small></p>
+                    @endif
+                </div>
+            </div>
+            @endforeach
+        @else
+        <div class="col-md-3 mb-4">
+            <h3>No mission founded!</h3>
         </div>
-        @endforeach
+        @endif
     </div>
 </div>
 
