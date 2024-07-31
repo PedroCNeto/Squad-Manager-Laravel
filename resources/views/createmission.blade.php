@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Squad Manager - Create Mission')
+@section('title', 'Create Mission - Squad Manager')
 
 @section('content')
 <div class="container mt-5">
