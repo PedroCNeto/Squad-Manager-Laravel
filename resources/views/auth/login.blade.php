@@ -5,18 +5,19 @@
 @section('content')
 
 <main>
-    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="d-flex justify-content-center flex-direction-column align-items-center" style="height: 100vh;">
         @session('status')
             <div class="mb-4 font-medium text-sm text-green-600">
                 {{ $value }}
             </div>
         @endsession
 
-        
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
+            <h1 class="text-center mb-4 font-weight-bold">Squad Manager</h1>    
             <div class="login-card" style="background-color: #1f2121">
+                <h2 class="text-center mb-4 font-weight-bold text-white">Welcome</h2>
                 <div>
                     <x-label for="email" class="text-white" value="{{ __('Email') }}" />
                     <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
@@ -33,18 +34,19 @@
                         <span class="ms-2 text-sm text-gray-600 text-white">{{ __('Remember me') }}</span>
                     </label>
                 </div>
-                <div class="flex items-center justify-end mt-4">
+                <div class="d-flex items-center justify-end mt-4">
                     @if (Route::has('password.request'))
                         <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
                             {{ __('Forgot your password?') }}
                         </a>
                     @endif
 
-                    <x-button class="ms-4 bg-secondary">
+                    <x-button class="ms-4 form-control bg-secondary">
                         {{ __('Log in') }}
                     </x-button>
                 </div>
-                <x-validation-errors class="mt-4 text-center text-white" />
+                <a class="mt-4 form-control bg-secondary text-center td-none" href="register">Register now</a>
+                <x-validation-errors class="mt-4 text-center text-white"/>
             </div>
 
         </form>
