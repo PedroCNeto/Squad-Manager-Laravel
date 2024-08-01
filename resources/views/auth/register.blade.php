@@ -1,9 +1,11 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+@extends('layouts.simple')
 
+@section('title', 'Login - Squad Manager')
+
+@section('content')
+
+<main>
+<div class="d-flex justify-content-center flex-direction-column align-items-center" style="height: 100vh;">
         <x-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
@@ -56,5 +58,7 @@
                 </x-button>
             </div>
         </form>
-    </x-authentication-card>
-</x-guest-layout>
+    </div>
+</main>
+
+@endsection
