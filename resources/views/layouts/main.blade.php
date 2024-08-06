@@ -21,12 +21,12 @@
         </div>
     </nav>
     
-    <nav class="navbar navbar-expand" style="background-color: #1e1e1e">
+    <nav class="navbar navbar-expand" style="background-color: #1e1e1e;">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto me-auto">
+        <ul class="navbar-nav ms-3 me-auto">
           <li class="nav-item active">
             <a class="nav-link" style="color: white" href="/">Home</a>
           </li>
@@ -39,16 +39,29 @@
         </ul>
       </div>
 
-      <div class="me-5">
-        <form method="POST" action="{{ route('logout') }}" x-data>
-          @csrf
+      <div class="me-3">
 
-          <button href="{{ route('logout') }}"
-              @click.prevent="$root.submit();"
-              class="form-control me-auto">
-              {{ __('Log Out') }}
-          </button>
-        </form>
+        @auth
+        <div class="d-flex direction-row">
+
+          <h6 class="text-white mt-auto mb-auto me-2">Logged user: {{ Auth::user()->name }}</h6>
+          <form method="POST" action="{{ route('logout') }}" x-data>
+            @csrf
+            <button href="{{ route('logout') }}"
+                @click.prevent="$root.submit();"
+                class="form-control me-auto">
+                {{ __('Log Out') }}
+            </button>
+          </form>
+        </div>
+        @endauth
+
+        @guest
+          <div class="d-flex direction-row">
+            <a class="btn btn-outline-primary me-2" href="login">Login</a>
+            <a class="btn btn-outline-secondary" href="register">Register</a>
+          </div>
+        @endguest
       </div>
 
     </nav>

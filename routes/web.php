@@ -16,13 +16,16 @@ Route::get('/createmission', [MissionController::class, 'createmissionpage']);
 Route::post('/createmission', [MissionController::class, 'store']);
 
 
-Route::middleware([
+if(Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-])->group(function () {
+])){
     Route::get('/', [MissionController::class, 'index']);
-});
+}
+else{
+    Route::get('/', [MissionController::class, 'index']);
+}
 
 
 // Route::middleware([
