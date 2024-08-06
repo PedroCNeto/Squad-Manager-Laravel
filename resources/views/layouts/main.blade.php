@@ -38,6 +38,19 @@
           </li>
         </ul>
       </div>
+
+      <div class="me-5">
+        <form method="POST" action="{{ route('logout') }}" x-data>
+          @csrf
+
+          <button href="{{ route('logout') }}"
+              @click.prevent="$root.submit();"
+              class="form-control me-auto">
+              {{ __('Log Out') }}
+          </button>
+        </form>
+      </div>
+
     </nav>
 
     @if(session('msg'))
