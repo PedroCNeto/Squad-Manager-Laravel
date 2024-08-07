@@ -8,6 +8,7 @@
         <h2 class="text-center mb-4">Creating Mission</h2>
         <div class="row d-flex justify-content-center">
             <div class="col-md-6 mb-4">
+            @auth
             <form action="/createmission" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row mb-4">
@@ -70,6 +71,10 @@
                     </div>
                 </div>
                 </form>
+                @endauth
+                @guest
+                    <h3 class="text-center">You have to be logged to create a mission</h3>
+                @endguest
             </div>
         </div>
     </div>
