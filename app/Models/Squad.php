@@ -15,4 +15,14 @@ class Squad extends Model
         return $this->hasMany(Mission::class);
     }
 
+    public function endMission()
+    {
+        $this->update(['status' => 0]);
+    }
+
+    public function startMission()
+    {
+        $this->update(['status' => 1]);
+    }
+
 }

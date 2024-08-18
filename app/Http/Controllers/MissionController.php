@@ -69,6 +69,7 @@ class MissionController extends Controller
 
 
         $mission = Mission::create(['name' => $name , 'local' => $local, 'squad_id' => $squadId, 'status' => 1, 'img' => $img, 'supports' => $supports]);
+        Squad::findOrFail($squadId)->startMission();
 
         return redirect('createmission')->with('msg', "Mission created successfully!");
 
@@ -78,5 +79,14 @@ class MissionController extends Controller
 
         $mission = Mission::findOrFail($id);
         return view('show.missionshow', ['mission' => $mission]);
+    }
+
+    public function end($id){
+        $mission = Mission::findOrFail($id);
+        $mission->update(['status' => 0]);
+
+        Squad::findOrFail($mission->squad->id)->endMission();
+
+        return redirect('../createmission')->with('msg', "Mission successfully ended");
     }
 }

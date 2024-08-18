@@ -20,7 +20,10 @@
                     <h4 class="text-center bg-success mb-2">Status: Finished</h4>
                 @else
                     <h4 class="text-center bg-danger mb-2">Status: Running</h4>
-                    <button class="form-control bg-success">Finish Mission</button>            
+                    <form action="{{ $mission->id }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <button class="form-control bg-success">Finish Mission</button>
+                    </form>            
                 @endif
             </div>
             <div class="col-md-6 mb-4">

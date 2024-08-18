@@ -9,8 +9,10 @@ Route::get('/', [MissionController::class, 'index']);
 Route::get('/createsquad', [SquadController::class, 'createsquadpage']);
 Route::post('/createsquad', [SquadController::class, 'store']);
 
-Route::get('/show/squadshow/{id}', [SquadController::class, 'show']);
-Route::get('/show/missionshow/{id}', [MissionController::class, 'show']);
+Route::get('/show/squadshow/{id}', [SquadController::class, 'show'])->middleware('auth');
+Route::get('/show/missionshow/{id}', [MissionController::class, 'show'])->middleware('auth');
+
+Route::post('/show/missionshow/{id}', [MissionController::class, 'end'])->middleware('auth');
 
 Route::get('/createmission', [MissionController::class, 'createmissionpage']);
 Route::post('/createmission', [MissionController::class, 'store']);

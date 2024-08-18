@@ -6,7 +6,6 @@
 
 <main>
 <div class="d-flex justify-content-center flex-direction-column align-items-center" style="height: 100vh;">
-        <x-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
@@ -57,7 +56,9 @@
                 <x-button class="ms-4 form-control bg-secondary">
                     {{ __('Register') }}
                 </x-button>
-                </div>
+            </div>
+            <x-validation-errors class="mb-4 text-white" />
+
             </div>
         </form>
     </div>
